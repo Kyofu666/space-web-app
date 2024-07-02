@@ -1,0 +1,194 @@
+@use "../../scss/utils/" as u;
+.destination {
+  background-image: url("../assets/destination/background-destination-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+  overflow: hidden;
+  font-weight: 300;
+  padding-bottom: u.rem(40);
+
+  @include u.breakpoints(medium) {
+    background-image: url("../assets/destination/background-destination-tablet.jpg");
+  }
+
+  @include u.breakpoints(large) {
+    background-image: url("../assets/destination/background-destination-desktop.jpg");
+  }
+
+  &__container {
+    margin-top: u.rem(30);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include u.breakpoints(medium) {
+      margin-top: u.rem(50);
+    }
+
+    &__title {
+      margin-bottom: u.rem(30);
+      text-transform: uppercase;
+      letter-spacing: u.rem(2);
+      font-size: u.rem(16);
+
+      @include u.breakpoints(medium) {
+        align-self: flex-start;
+        margin-left: u.rem(38);
+        font-size: u.rem(20);
+      }
+
+      @include u.breakpoints(large) {
+        margin-left: u.rem(160);
+      }
+
+      & span {
+        margin-right: u.rem(18);
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.destination__container__card {
+  @include u.breakpoints(large) {
+    width: 100%;
+  }
+
+  &__infoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include u.breakpoints(large) {
+      flex-direction: row;
+    }
+
+    @include u.breakpoints(large) {
+      justify-content: center;
+      gap: u.rem(157);
+    }
+  }
+
+  &__img {
+    width: u.rem(170);
+    aspect-ratio: 1;
+
+    @include u.breakpoints(medium) {
+      width: u.rem(300);
+      margin-top: u.rem(40);
+    }
+
+    @include u.breakpoints(large) {
+      width: u.rem(405);
+      margin-top: u.rem(40);
+    }
+  }
+}
+
+.destination__container__cardA {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include u.breakpoints(large) {
+    align-items: start;
+  }
+
+  &__btns {
+    cursor: pointer;
+    display: flex;
+    gap: u.rem(26);
+    margin-top: u.rem(60);
+    letter-spacing: u.rem(3);
+
+    & li {
+      position: relative;
+
+      &.active::after {
+        content: "";
+        position: absolute;
+        bottom: u.rem(-15);
+        display: block;
+        height: u.rem(3);
+        width: 100%;
+        background-color: #ffffff;
+      }
+    }
+  }
+
+  &__title {
+    font-size: u.rem(56);
+    font-weight: 300;
+    letter-spacing: u.rem(10);
+    margin-top: u.rem(50);
+    margin-bottom: u.rem(10);
+    text-align: center;
+
+    @include u.breakpoints(medium) {
+      margin-bottom: u.rem(20);
+    }
+
+    @include u.breakpoints(large) {
+      font-size: u.rem(100);
+    }
+  }
+
+  &__info {
+    max-width: u.rem(327);
+    text-align: center;
+    font-size: u.rem(15);
+    font-weight: 300;
+    line-height: 2;
+
+    @include u.breakpoints(medium) {
+      font-size: u.rem(16);
+      max-width: u.rem(573);
+    }
+
+    @include u.breakpoints(large) {
+      text-align: start;
+      max-width: u.rem(444);
+      font-size: u.rem(18);
+    }
+  }
+
+  &__travelInfo {
+    border-top: 1px solid #383b4b;
+    margin-top: u.rem(32);
+    padding-top: u.rem(32);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(25);
+
+    @include u.breakpoints(medium) {
+      flex-direction: row;
+      justify-content: center;
+      gap: u.rem(60);
+    }
+
+    @include u.breakpoints(large) {
+      flex-direction: row;
+      justify-content: start;
+      gap: u.rem(60);
+    }
+
+    & p {
+      font-size: u.rem(28);
+      text-align: center;
+
+      @include u.breakpoints(medium) {
+        text-align: start;
+      }
+    }
+
+    & p span {
+      font-size: u.rem(14);
+      text-transform: uppercase;
+      display: block;
+      line-height: 2.8;
+    }
+  }
+}

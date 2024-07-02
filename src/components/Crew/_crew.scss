@@ -1,0 +1,186 @@
+@use "../../scss/utils/" as u;
+
+.crew {
+  background-image: url("../assets/crew/background-crew-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+  overflow: hidden;
+  font-weight: 300;
+
+  @include u.breakpoints(medium) {
+    background-image: url("../assets/crew/background-crew-tablet.jpg");
+  }
+
+  @include u.breakpoints(large) {
+    background-image: url("../assets/crew/background-crew-desktop.jpg");
+  }
+}
+
+.crew__container {
+  margin-top: u.rem(50);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    margin-bottom: u.rem(30);
+    text-transform: uppercase;
+    letter-spacing: u.rem(2);
+    font-size: u.rem(16);
+
+    & span {
+      margin-right: u.rem(18);
+      font-weight: bold;
+    }
+
+    @include u.breakpoints(medium) {
+      align-self: flex-start;
+      font-size: u.rem(20);
+      margin-left: u.rem(38);
+    }
+    @include u.breakpoints(large) {
+      align-self: flex-start;
+      margin-left: u.rem(70);
+      font-size: u.rem(28);
+    }
+  }
+}
+
+.crew__container__display {
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: u.rem(30);
+
+    @include u.breakpoints(medium) {
+      padding-bottom: u.rem(0);
+    }
+
+    @include u.breakpoints(large) {
+      display: grid;
+      column-gap: u.rem(250);
+      grid-template-areas:
+        "a b"
+        "c b"
+        "d b";
+    }
+
+    &__img {
+      border-bottom: 1px solid #383b4b;
+      display: flex;
+      justify-content: center;
+      width: 80%;
+
+      & img {
+        height: u.rem(222);
+
+        @include u.breakpoints(medium) {
+          height: u.rem(572);
+        }
+        @include u.breakpoints(large) {
+          height: u.rem(600);
+        }
+      }
+
+      @include u.breakpoints(medium) {
+        order: 4;
+        margin-top: u.rem(40);
+        border: none;
+      }
+
+      @include u.breakpoints(large) {
+        margin-top: u.rem(0);
+        grid-area: b;
+      }
+    }
+
+    &__btns {
+      margin-top: u.rem(32);
+      display: flex;
+      gap: u.rem(16);
+
+      @include u.breakpoints(medium) {
+        order: 3;
+      }
+      @include u.breakpoints(large) {
+        margin-top: u.rem(0);
+      }
+
+      & div {
+        cursor: pointer;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #979797;
+
+        &.active {
+          background-color: white;
+        }
+
+        @include u.breakpoints(medium) {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+
+    &__name {
+      margin-top: u.rem(32);
+      text-align: center;
+      font-size: u.rem(24);
+      text-transform: uppercase;
+      letter-spacing: u.rem(3);
+
+      @include u.breakpoints(medium) {
+        order: 1;
+        font-size: u.rem(40);
+      }
+
+      @include u.breakpoints(large) {
+        grid-area: a;
+        font-size: u.rem(56);
+        text-align: start;
+      }
+
+      & span {
+        font-size: u.rem(16);
+        display: block;
+        line-height: 2;
+        opacity: 0.5;
+
+        @include u.breakpoints(medium) {
+          font-size: u.rem(24);
+        }
+        @include u.breakpoints(large) {
+          font-size: u.rem(32);
+        }
+      }
+    }
+
+    &__info {
+      font-size: u.rem(15);
+      max-width: u.rem(327);
+      line-height: 2;
+      text-align: center;
+      margin-top: u.rem(16);
+
+      @include u.breakpoints(medium) {
+        max-width: u.rem(458);
+        font-size: u.rem(16);
+        order: 2;
+      }
+
+      @include u.breakpoints(large) {
+        grid-area: c;
+        font-size: u.rem(18);
+        text-align: start;
+        max-width: u.rem(444);
+        align-self: baseline;
+        margin-top: u.rem(0);
+      }
+    }
+  }
+}

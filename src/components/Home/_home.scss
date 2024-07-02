@@ -1,0 +1,101 @@
+@use "../../scss/utils/" as u;
+
+.home {
+  background-image: url("../assets/home/background-home-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+  overflow: hidden;
+
+  @include u.breakpoints(medium) {
+    background-image: url("../assets/home/background-home-tablet.jpg");
+  }
+
+  @include u.breakpoints(large) {
+    background-image: url("../assets/home/background-home-desktop.jpg");
+  }
+
+  &__test {
+    margin-top: u.rem(80);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include u.breakpoints(large) {
+      margin-top: u.rem(150);
+      margin-bottom: u.rem(100);
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &--medium {
+    font-size: u.rem(16);
+    letter-spacing: u.rem(4.72);
+
+    @include u.breakpoints(medium) {
+      font-size: u.rem(20);
+    }
+
+    @include u.breakpoints(large) {
+      font-size: u.rem(28);
+    }
+  }
+
+  &--big {
+    font-size: u.rem(80);
+    line-height: 1.4;
+    font-family: u.$belle;
+
+    @include u.breakpoints(medium) {
+      font-size: u.rem(150);
+    }
+  }
+
+  &--small {
+    font-size: u.rem(15);
+    line-height: u.rem(25);
+    max-width: u.rem(327);
+    font-family: u.$barlow;
+    color: #d0d6f9;
+
+    @include u.breakpoints(medium) {
+      font-size: u.rem(16);
+    }
+
+    @include u.breakpoints(large) {
+      font-size: u.rem(18);
+    }
+  }
+
+  &__circle {
+    margin-top: u.rem(81);
+    align-self: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Bellefair", serif;
+
+    @include u.breakpoints(large) {
+      margin-top: u.rem(0);
+    }
+
+    & p {
+      font-size: u.rem(20);
+      color: #0b0d17;
+      letter-spacing: u.rem(2);
+    }
+  }
+}
