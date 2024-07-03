@@ -2,40 +2,36 @@ import Destination from "./components/Destination/Destination"
 import Home from "./components/Home/Home"
 import Crew from "./components/Crew/Crew"
 import Technology from "./components/Technology/Technology"
-import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom"
-import Navbar from "./components/Navbar/nav"
-
-
+import ErrorPage from "./components/Error/ErrorPage"
+import { RouterProvider, createBrowserRouter } from "react-router-dom"
 
 const App = () => {
 
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Home />
+      index: true,
+      element: <Home />,
+      errorElement: <ErrorPage />
     },
     {
       path: 'destination',
-      element: <Destination />
+      element: <Destination />,
+      errorElement: <ErrorPage />
     },
     {
       path: 'crew',
-      element: <Crew />
+      element: <Crew />,
+      errorElement: <ErrorPage />
     },
     {
       path: 'technology',
-      element: <Technology />
+      element: <Technology />,
+      errorElement: <ErrorPage />
     },
-
-
-
   ])
 
-  return (
-    <RouterProvider router={router}>
-
-    </RouterProvider>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App

@@ -1,18 +1,15 @@
 import { useState } from 'react'
 import Navbar from '../Navbar/nav'
-
 import { crewData } from './crewData'
 import { nanoid } from 'nanoid'
 
 const Crew = () => {
-
     const [activePage, setActivePage] = useState('Douglas Hurley')
     const btnsArray = [...new Set(crewData.map(item => item.name))]
 
     return (
         <section className='crew'>
             <Navbar />
-
             <div className="crew__container">
                 <p className='crew__container__title'>
                     <span>02</span>

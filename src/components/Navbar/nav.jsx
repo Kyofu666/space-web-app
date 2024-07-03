@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useLocation, NavLink } from "react-router-dom";
 import logo from "../../assets/shared/logo.svg";
 import menuBtn from '../../assets/shared/icon-hamburger.svg'
 import closeBtn from '../../assets/shared/icon-close.svg'
-import { useLocation, NavLink } from "react-router-dom";
 
 function Nav() {
   const pathname = useLocation()

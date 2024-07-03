@@ -48,10 +48,11 @@ body {
 }
 @media (min-width: 68.75em) {
   .nav__line {
+    z-index: 100;
     display: block;
     position: relative;
-    left: 5rem;
-    width: 26.25rem;
+    left: 1.875rem;
+    width: 26.875rem;
     height: 0.0625rem;
     z-index: 1000;
     background: #ffffff;
@@ -83,7 +84,7 @@ body {
 }
 .nav__links {
   position: absolute;
-  z-index: 9999;
+  z-index: 1000;
   height: 100vh;
   width: 80%;
   right: -1.25rem;
@@ -99,6 +100,7 @@ body {
 }
 @media (min-width: 43.75em) {
   .nav__links {
+    z-index: 0;
     position: static;
     height: initial;
     width: initial;
